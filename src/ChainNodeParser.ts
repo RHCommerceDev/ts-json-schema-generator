@@ -28,6 +28,12 @@ export class ChainNodeParser implements SubNodeParser {
         const contextCacheKey = context.getCacheKey();
         let type = typeCache.get(contextCacheKey);
         if (!type) {
+            let parser;
+            try {
+                parser = this.getNodeParser(node, context);
+            } catch (err) {
+                return undefined;
+            }
             type = this.getNodeParser(node, context).createType(node, context, reference);
             if (!(type instanceof ReferenceType)) {
                 typeCache.set(contextCacheKey, type);

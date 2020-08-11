@@ -44,6 +44,8 @@ export * from "./src/TypeFormatter";
 export * from "./src/SubTypeFormatter";
 export * from "./src/ChainTypeFormatter";
 export * from "./src/CircularReferenceTypeFormatter";
+export * from "./src/TypeFormatter/FunctionTypeFormatter";
+
 export * from "./src/TypeFormatter/AnyTypeFormatter";
 export * from "./src/TypeFormatter/UnknownTypeFormatter";
 export * from "./src/TypeFormatter/NullTypeFormatter";
