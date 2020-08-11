@@ -10,7 +10,7 @@ export class DefinitionType extends BaseType {
     }
 
     public getName(): string {
-        return this.name || super.getName();
+        return encodeURIComponent(this.name || super.getName());
     }
 
     public getType(): BaseType {
