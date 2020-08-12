@@ -34,7 +34,7 @@ export class ChainNodeParser implements SubNodeParser {
             } catch (err) {
                 return undefined;
             }
-            type = this.getNodeParser(node, context).createType(node, context, reference);
+            type = parser.createType(node, context, reference);
             if (!(type instanceof ReferenceType)) {
                 typeCache.set(contextCacheKey, type);
             }
