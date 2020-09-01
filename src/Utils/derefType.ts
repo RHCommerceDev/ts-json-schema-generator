@@ -6,10 +6,13 @@ import { ReferenceType } from "../Type/ReferenceType";
 
 export function derefType(type: BaseType | undefined): BaseType | undefined {
     if (
-        type instanceof ReferenceType ||
-        type instanceof DefinitionType ||
-        type instanceof AliasType ||
-        type instanceof AnnotatedType
+        type &&
+        // @ts-ignore
+        type.type &&
+        (type instanceof ReferenceType ||
+            type instanceof DefinitionType ||
+            type instanceof AliasType ||
+            type instanceof AnnotatedType)
     ) {
         return derefType(type.getType());
     }
