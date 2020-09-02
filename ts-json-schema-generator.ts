@@ -49,7 +49,10 @@ const config: Config = {
 
 try {
     const schema = createGenerator(config).createSchema(args.type);
-    const schemaString = config.sortProps ? stringify(schema, { space: 2 }) : JSON.stringify(schema, null, 2);
+    const schemaString = config.sortProps
+        ? // @ts-ignore
+          stringify(schema, { space: 2, cycles: true })
+        : JSON.stringify(schema, null, 2);
 
     if (args.out) {
         // write to file

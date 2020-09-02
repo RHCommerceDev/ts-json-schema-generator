@@ -39,7 +39,7 @@ export class IndexedAccessTypeNodeParser implements SubNodeParser {
                 if (type instanceof NumberType && objectType instanceof TupleType) {
                     return new UnionType(objectType.getTypes());
                 } else if (type instanceof LiteralType) {
-                    throw new LogicError(`Invalid index "${type.getValue()}" in type "${objectType.getId()}"`);
+                    // throw new LogicError(`Invalid index "${type.getValue()}" in type "${objectType.getId()}"`);
                 } else {
                     throw new LogicError(`No additional properties in type "${objectType.getId()}"`);
                 }
@@ -47,6 +47,7 @@ export class IndexedAccessTypeNodeParser implements SubNodeParser {
 
             return propertyType;
         });
+        // @ts-ignore
         return propertyTypes.length === 1 ? propertyTypes[0] : new UnionType(propertyTypes);
     }
 }
