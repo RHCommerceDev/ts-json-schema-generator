@@ -8,7 +8,7 @@ jobs:
     # by the push to the branch.
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
 
-    runs-on: ubuntu-latest
+    runs-on: rh-ubuntu-latest-2core
 
     name: Test
 
