@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: rh-ubuntu-latest-2core
 
     name: Publish to NPM
 
