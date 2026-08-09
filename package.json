@@ -33,7 +33,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "@types/json-schema": "^7.0.5",
+    "@types/json-schema": "^7.0.15",
     "commander": "~6.0.0",
     "glob": "~7.1.6",
     "json-stable-stringify": "^1.0.1",
